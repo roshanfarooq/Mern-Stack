@@ -1,12 +1,10 @@
 {
-    "version":2,
-    "builds" : [
-        {"src" : "*.js", "vercel" :"@vercel/node"}
+    "version": 2,
+    "name": "workout-app",
+    "builds": [
+       { "src": "app.js", "use": "@vercel/node" }
     ],
-    "routes" :[
-        {
-            "src": "/(.*)",
-            "dest" : "/"
-        }
+    "routes": [
+       { "src": "/(.*)", "dest": "/app.js" }
     ]
-}
+ }
