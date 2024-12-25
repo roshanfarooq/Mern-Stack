@@ -8,13 +8,13 @@ const userRoutes = require('./routes/user')
 
 // express app
 const app = express()
-app.use(cors(
-  {
-    origin:["https://mern-stack-mocha-six.vercel.app"],
-    methods: ["GET" , "POST" , "DELETE"],
-    credentials:true
-  }
-))
+// app.use(cors(
+//   {
+//     origin:["https://mern-stack-mocha-six.vercel.app"],
+//     methods: ["GET" , "POST" , "DELETE"],
+//     credentials:true
+//   }
+// ))
 
 
 
