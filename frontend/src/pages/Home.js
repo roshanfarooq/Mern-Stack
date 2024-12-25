@@ -11,7 +11,7 @@ import WorkoutForm from '../components/WorkoutForm'
 const Home = () => {
   const {workouts, dispatch} = useWorkoutsContext()
   const {user}=useAuthContext()
-
+ 
   useEffect(() => {
     toast.success("Succesfully Logged in...."); // Test toast
     const fetchWorkouts = async () => {
