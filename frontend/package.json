@@ -1,5 +1,5 @@
 {
-  "proxy": "https://mern-stack-mocha-six.vercel.app/",
+  "proxy": "https://mern-stack-mocha-six.vercel.app",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
