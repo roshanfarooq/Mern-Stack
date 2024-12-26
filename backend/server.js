@@ -9,10 +9,10 @@ const userRoutes = require('./routes/user')
 // express app
 const app = express()
 app.use(cors({
-  origin: 'https://mern-stack-mocha-six.vercel.app', // Replace this with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-}));
+  origin: ['http://localhost:3000', 'https://workout-count-app.vercel.app'], // Add both local and deployed URLs
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}))
 
 
 

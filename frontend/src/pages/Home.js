@@ -15,7 +15,8 @@ const Home = () => {
   useEffect(() => {
     toast.success("Succesfully Logged in...."); // Test toast
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts',{
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+      const response = await fetch(`${API_URL}/api/workouts`,{
         headers:{'Authorization': `Bearer ${user.token}`}
       })
       const json = await response.json()
