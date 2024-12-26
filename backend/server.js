@@ -8,7 +8,6 @@ const userRoutes = require('./routes/user')
 
 // express app
 const app = express()
-const cors = require('cors');
 
 // Allowed origins ka array
 const allowedOrigins = [
