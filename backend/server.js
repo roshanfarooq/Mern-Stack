@@ -8,11 +8,29 @@ const userRoutes = require('./routes/user')
 
 // express app
 const app = express()
+const cors = require('cors');
+
+// Allowed origins ka array
+const allowedOrigins = [
+  'http://localhost:3000', // Local development frontend
+  'https://mern-stack--xi.vercel.app', // Deployed frontend (replace with your actual frontend URL)
+];
+
+// CORS middleware setup
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://workout-count-app.vercel.app'], // Add both local and deployed URLs
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}))
+  origin: (origin, callback) => {
+    // Agar origin allowed hai ya undefined (e.g., Postman requests)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // If you are using cookies/auth headers
+}));
+
 
 
 
